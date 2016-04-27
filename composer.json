@@ -1,0 +1,20 @@
+{
+    "name": "bt/rocketchat-php",
+        "type": "library",
+    "description": "A PHP interface to send incoming webhooks.",
+    "require": {
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bertram Truong",
+            "email": "b@bertramtruong.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "RocketChatPhp\\": "src/"
+        }
+    }
+}
