@@ -2,7 +2,7 @@
 
 namespace RocketChatPhp;
 
-class Attachments
+class Attachment
 {
 
     /**
@@ -32,7 +32,7 @@ class Attachments
     }
 
     /**
-     * Add a field to the attachments list.
+     * Add a field to the attachment list.
      * @param $title
      * @param $value
      * @param bool $short
@@ -47,16 +47,16 @@ class Attachments
     }
 
     /**
-     * Return the array of attachments.
+     * Return the array of data for the attachment.
      * @return array
      */
     public function toArray()
     {
-        return [[
+        return [
             'fallback' => $this->fallback,
             'color' => $this->color,
             'fields' => $this->fields
-        ]];
+        ];
     }
 
 }

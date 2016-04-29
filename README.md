@@ -32,13 +32,15 @@ $client->payload([
 You can also add attachments to the message like follows:
 
 ```php
-$attachments = new \RocketChatPhp\Attachments('The text to be displayed if the client cannot load the attachment.', '#ffffff');
-$attachments->addField('Field Title', 'Field Value', true);
-$attachments->addField('Field Title2', 'Field Value2', true);
+$attachment = new \RocketChatPhp\Attachment('The text to be displayed if the client cannot load the attachment.', '#ffffff');
+$attachment->addField('Field Title', 'Field Value', true);
+$attachment->addField('Field Title2', 'Field Value2', true);
 
 $client = new \RocketChatPhp\Client('https://demo.rocket.chat', 'webhook_token');
 $client->payload([
     'text' => 'This is a test message with attachments!',
-    'attachments' => $attachments->toArray()
+    'attachments' => [
+    	$attachment->toArray()
+    ]
 ]);
 ```

@@ -6,6 +6,7 @@ use GuzzleHttp\Client as GuzzleClient;
 
 class Client
 {
+    
     const HOOK_URI = '/hooks';
 
     /**
@@ -54,28 +55,3 @@ class Client
         return sprintf('%s/%s', self::HOOK_URI, $this->token);
     }
 }
-
-
-/*
-$rocketchat = new Client('https://chat.pawsexpress.com.au', 'supertoken');
-$rocketchat->payload([
-	'text' => 'Order Confirmed',
-	'attachments' => [
-		''
-	]
-]);
-
-OR
-
-$builder = new RocketChatPayloadBuilder();
-
-$attachments = $builder->attachments();
-$attachments->addField('ordernumber', '1', true);
-
-$rocketchat = new Client('https://chat.pawsexpress.com.au', 'supertoken');
-$rocketchat->payload([
-	'text' => 'test',
-	'attachments' => $attachments
-])
-
-*/
